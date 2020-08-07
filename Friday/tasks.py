@@ -1,3 +1,4 @@
+from .functionalities import *
 import requests
 import re
 from bs4 import BeautifulSoup
@@ -33,8 +34,18 @@ class Tasks:
     posibillities(array)
     return possible_tasks
 
-  def do_tasks(self, posibillities, question):
-    pass
+  def do_tasks(self, task_types, question):
+    for task in task_types:
+      # if task == "greeting":
+        # Greetings()
+      if task == "name":
+        print(MyName(self.bot))
+      elif task == "places":
+        print(MyPlace(self.bot))
+
+
   def work(self, question):
     print(question)
     task_types = Tasks.task_type(self, question)
+    print(task_types)
+    Tasks.do_tasks(self, task_types, question)

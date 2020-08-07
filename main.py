@@ -1,6 +1,6 @@
 from Friday import bot, tasks
 
-Bot = bot.Bot("Friday", "Sidharth", "")
+Bot = bot.Bot("Friday", "Sidharth", "", "narela")
 
 task = tasks.Tasks(Bot)
 
