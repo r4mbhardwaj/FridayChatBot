@@ -4,4 +4,4 @@ Bot = bot.Bot("Friday", "Sidharth", "")
 
 task = tasks.Tasks(Bot)
 
-Bot.ask(task, "Hi there, How are you")
+Bot.ask(task, "Hi there, How are you, what is your name??? tell me your name")

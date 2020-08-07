@@ -8,25 +8,33 @@ class Tasks:
   # or make your own greetings
   greetings = np.array(['hi', 'hello', "hey there", "how are you", "what are you doing", "how is it going"])
 
-  name = np.array(['who are you', 'your name', "call you", 'what'])
+  name = np.array(['who are you', 'who', 'your name', "call you", 'what', 'are you'])
+
+  place = np.array(['where', "you live", "place", "your", "house", "home", "family"])
+
+  feedbacks = np.array(['good', "bad", "amazing", "fantastic", "wonderful", "worst", 'better', "beautiful", 'shit', 'antique'])
 
   def __init__(self, bot):
     self.bot = bot
 
   def task_type(self, question):
     possible_tasks = {}
-    
-    # possibility of greeting
-    for greet in Tasks.greetings:
-      if greet.lower() in question.lower():
-        if 'greeting' in possible_tasks:
-          possible_tasks['greeting'] = int(possible_tasks['greeting']) + 1
-        else:
-          possible_tasks['greeting'] = 1
-    
+    array = np.array([{"call":"greeting", "array":Tasks.greetings}, {"call":"name", "array":Tasks.name}, {"call":"places", "array":Tasks.place}])
 
-    print(possible_tasks)
+    def posibillities(array):
+      for i in array:
+        for word in i['array']:
+          if word.lower() in question.lower():
+            if i['call'] in possible_tasks:
+              possible_tasks[i['call']] = int(possible_tasks[i['call']]) + 1
+            else:
+              possible_tasks[i['call']] = 1
 
+    posibillities(array)
+    return possible_tasks
+
+  def do_tasks(self, posibillities, question):
+    pass
   def work(self, question):
     print(question)
-    print(self.task_type(question))
+    task_types = Tasks.task_type(self, question)
