@@ -8,19 +8,17 @@ import numpy as np
 class Tasks:
   # or make your own greetings
   greetings = np.array(['hi', 'hello', "hey there", "how are you", "what are you doing", "how is it going"])
-
   name = np.array(['who are you', 'who', 'your name', "call you", 'what', 'are you'])
-
   place = np.array(['where', "you live", "place", "your", "house", "home", "family"])
-
   feedbacks = np.array(['good', "bad", "amazing", "fantastic", "wonderful", "worst", 'better', "beautiful", 'shit', 'antique'])
+  contact = np.array(['contact', 'email', 'your', 'phone', 'mobile'])
 
   def __init__(self, bot):
     self.bot = bot
 
   def task_type(self, question):
     possible_tasks = {}
-    array = np.array([{"call":"greeting", "array":Tasks.greetings}, {"call":"name", "array":Tasks.name}, {"call":"places", "array":Tasks.place}])
+    array = np.array([{"call":"greeting", "array":Tasks.greetings}, {"call":"name", "array":Tasks.name}, {"call":"places", "array":Tasks.place}, {"call":"contact", "array":Tasks.contact}])
 
     def posibillities(array):
       for i in array:
@@ -36,16 +34,15 @@ class Tasks:
 
   def do_tasks(self, task_types, question):
     for task in task_types:
-      # if task == "greeting":
-        # Greetings()
+      if task == "greeting":
+        print(greetings(self.bot))
       if task == "name":
         print(MyName(self.bot))
       elif task == "places":
         print(MyPlace(self.bot))
-
+      elif task == "contact":
+        print(contact_methods(self.bot))
 
   def work(self, question):
-    print(question)
     task_types = Tasks.task_type(self, question)
-    print(task_types)
     Tasks.do_tasks(self, task_types, question)

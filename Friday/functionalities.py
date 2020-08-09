@@ -29,3 +29,11 @@ def MyPlace(bot):
 	'''
 	ways = [f"I live in {bot.address}", f"I am from {bot.address}, what about you?", f"I am a citizen from {bot.address}, where are you from?", f"I live in {bot.address}, {bot.user} what 'bout ya?"]
 	return random.choice(ways)
+
+def contact_methods(bot):
+	ways = [f"You can contact me using my email at {bot.email}", f"Hey {bot.user}, You can always contact me at {bot.email}"]
+	return random.choice(ways)
+
+def greetings(bot):
+	ways = [f"Hey there! How are you {bot.user}", f"I am preety fine here, What about you?", f"Hello {bot.user}, I am your {bot.BotName}!", f"Your {bot.BotName} is so Good! what about you?"]
+	return random.choice(ways)
