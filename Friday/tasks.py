@@ -12,13 +12,14 @@ class Tasks:
   place = np.array(['where', "you live", "place", "your", "house", "home", "family"])
   feedbacks = np.array(['good', "bad", "amazing", "fantastic", "wonderful", "worst", 'better', "beautiful", 'shit', 'antique'])
   contact = np.array(['contact', 'email', 'your', 'phone', 'mobile'])
+  bye = np.array(['bye', 'see you later', 'exit'])
 
   def __init__(self, bot):
     self.bot = bot
 
   def task_type(self, question):
     possible_tasks = {}
-    array = np.array([{"call":"greeting", "array":Tasks.greetings}, {"call":"name", "array":Tasks.name}, {"call":"places", "array":Tasks.place}, {"call":"contact", "array":Tasks.contact}])
+    array = np.array([{"call":"greeting", "array":Tasks.greetings}, {"call":"name", "array":Tasks.name}, {"call":"places", "array":Tasks.place}, {"call":"contact", "array":Tasks.contact}, {"call":"bye", "array":Tasks.bye}])
 
     def posibillities(array):
       for i in array:
@@ -42,6 +43,9 @@ class Tasks:
         print(MyPlace(self.bot))
       elif task == "contact":
         print(contact_methods(self.bot))
+      elif task == "bye":
+        print(bye(self.bot))
+        exit()
 
   def work(self, question):
     task_types = Tasks.task_type(self, question)

@@ -2,19 +2,16 @@ import random
 import re
 import datetime
 
-# def Greetings(question):
-# 	hour = int(datetime.datetime.now().hour)
-#     if hour >= 0 and hour < 12:
-#         return 'Good Morning!'
-
-#     elif hour >= 12 and hour < 17:
-#         return 'Good Afternoon!'
-
-#     elif hour >= 17 and hour < 21:
-#         return 'Good Evening!'
-
-#     else:
-#         return 'Good Night!'
+def Greetings():
+	hour = int(datetime.datetime.now().hour)
+	if hour >= 0 and hour < 12:
+		return 'Good Morning!'
+	elif hour >= 12 and hour < 17:
+		return 'Good Afternoon!'
+	elif hour >= 17 and hour < 21:
+		return 'Good Evening!'
+	else:
+		return 'Good Night!'
 
 def MyName(bot):
 	'''
@@ -36,4 +33,8 @@ def contact_methods(bot):
 
 def greetings(bot):
 	ways = [f"Hey there! How are you {bot.user}", f"I am preety fine here, What about you?", f"Hello {bot.user}, I am your {bot.BotName}!", f"Your {bot.BotName} is so Good! what about you?"]
+	return random.choice(ways)
+
+def bye(bot):
+	ways = [f"Ok! Bye!", f"Okay, see you later!", f"Bye, {bot.user}!"]
 	return random.choice(ways)
