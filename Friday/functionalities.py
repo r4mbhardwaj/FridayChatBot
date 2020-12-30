@@ -1,6 +1,17 @@
 import random
 import re
 import datetime
+# import wolframalpha
+
+# def wolfram(x):
+#     pns('checking on wolfram alpha')
+#     client = wolframalpha.Client("GPP4RX-2GYKR7QHR4")
+#     question = client.query(x)
+#     try:
+#         pns(next(question.results).text)
+#     except:
+#         pns('No results from wolfram alpha')
+
 
 def Greetings():
 	hour = int(datetime.datetime.now().hour)
