@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
-  name = 'Friday',         # How you named your package folder (MyLib)
-  packages = ['Friday'],   # Chose the same as "name"
+  name = 'FridayChatBot',         # How you named your package folder (MyLib)
+  packages = ['FridayChatBot'],   # Chose the same as "name"
   version = '0.1',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Friday Assistant Library is a simple chatbot which is very simple to use and customize!\nIts works really well and fast! It can answer your simple questions!',
