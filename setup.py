@@ -2,14 +2,14 @@ from distutils.core import setup
 setup(
   name = 'FridayChatBot',         # How you named your package folder (MyLib)
   packages = ['FridayChatBot'],   # Chose the same as "name"
-  version = '0.1',      # Start with a small number and increase it with every change you make
+  version = '0.2',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
-  description = 'Friday Assistant Library is a simple chatbot which is very simple to use and customize!\nIts works really well and fast! It can answer your simple questions!',
+  description = 'Create your own simple chatbot using Friday',
   author = 'Ram Bhardwaj',                   # Type in your name
-  author_email = 'programmersidharth@gmail.com',      # Type in your E-Mail
+  author_email = 'ram@sidtu.be',      # Type in your E-Mail
   url = 'https://sidtu.be/',   # Provide either the link to your github or to your website
   download_url = 'https://github.com/programmersidharth/FridayChatBot/archive/v_01.tar.gz',    # I explain this later on
-  keywords = ['chatbot', 'jarvis', 'friday assistant', 'google assistant', 'alexa', 'siri'],   # Keywords that define your package best
+  keywords = ['chatbot', 'jarvis', 'friday assistant', 'google assistant', 'alexa', 'siri', 'gideon'],   # Keywords that define your package best
   install_requires=[            # I get to this in a second
           'validators',
           'beautifulsoup4',
