@@ -9,4 +9,4 @@ class Bot:
     
 
   def ask(self, task, question):
-    task.work(question)
+    return task.work(question)

@@ -34,19 +34,32 @@ class Tasks:
     return possible_tasks
 
   def do_tasks(self, task_types, question):
+    data = []
     for task in task_types:
       if task == "greeting":
-        print(greetings(self.bot))
+        data.append(greetings(self.bot))
       if task == "name":
-        print(MyName(self.bot))
+        data.append(MyName(self.bot))
       elif task == "places":
-        print(MyPlace(self.bot))
+        data.append(MyPlace(self.bot))
       elif task == "contact":
-        print(contact_methods(self.bot))
+        data.append(contact_methods(self.bot))
       elif task == "bye":
         print(bye(self.bot))
         exit()
+    if type(data) != str:
+      return '. '.join(data)
 
   def work(self, question):
+    data = []
     task_types = Tasks.task_type(self, question)
-    Tasks.do_tasks(self, task_types, question)
+    tasks_data = Tasks.do_tasks(self, task_types, question)
+    if type(tasks_data) != str:
+      data.extend(tasks_data)
+    else:
+      data.append(tasks_data)
+    if type(data) != str:
+        joined_data = '. '.join(data)
+    else:
+        joined_data = data
+    return {'response':joined_data, 'types':task_types}
