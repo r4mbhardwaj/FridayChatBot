@@ -1,6 +1,13 @@
-from Friday import bot, tasks, functionalities
-Bot = bot.Bot("Friday", "Sidharth", "fridayassitance@gmail.com", "narela")
+from FridayChatBot import bot, tasks, functionalities
+
+name = input('Your name: ')
+print(f'Hello {name}, you are successfully logged in!')
+Bot = bot.Bot("Gideon", name, "fridayassitance@gmail.com", "gideon.sidtu.be")
 task = tasks.Tasks(Bot)
 print(functionalities.Greetings())
+
 while 1:
-	Bot.ask(task, input("you: "))
+    asked = input(name + '> ')
+    data = Bot.ask(task, asked)
+    if data:
+        print(data['response'])
