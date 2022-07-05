@@ -11,7 +11,7 @@ for testing.🧪
     from FridayChatBot import bot, tasks, functionalities
     name = "Ram"
     print(f'Hello {name}, you are successfully logged in!')
-    Bot = bot.Bot("Gideon", name, gideon@sidtu.be", "gideon.sidtu.be")
+    Bot = bot.Bot("Gideon", name, "gideon@sidtu.be", "gideon.sidtu.be")
     task = tasks.Tasks(Bot)
     print(functionalities.Greetings())
 
